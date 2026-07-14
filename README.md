@@ -1,9 +1,6 @@
 # AIML-Credit-card-Approval-System
 The Credit Card Approval Prediction project uses machine learning to predict whether a customer's credit card application will be approved based on personal and financial information such as income, employment status, credit history, and other factors.
 
-## Live Demo
-
-https://ai-ml-credit-card-approval-project-1.onrender.com
 
 ## Run locally
 
