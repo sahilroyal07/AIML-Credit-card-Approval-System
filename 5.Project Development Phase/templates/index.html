@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row g-4 align-items-stretch">
+  <div class="col-lg-8">
+    <div class="card shadow-sm hero-card h-100">
+      <div class="card-body p-4 p-md-5">
+        <p class="section-kicker mb-2">Decision Intelligence</p>
+        <h1 class="display-title mb-3">Credit Card Approval Prediction</h1>
+        <p class="lead-copy mb-4">Assess application risk with a machine learning model trained on financial and demographic indicators. Enter a profile, get an instant decision, and review insights.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-primary" href="/predict">Start Prediction</a>
+          <a class="btn btn-outline-secondary" href="/dashboard">Open Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card info-panel h-100">
+      <div class="card-body p-4">
+        <h5 class="mb-3">What This System Tracks</h5>
+        <ul class="feature-list">
+          <li>Income stability and employment duration</li>
+          <li>Credit history and existing debt load</li>
+          <li>Risk indicators transformed by preprocessing</li>
+        </ul>
+        <a class="btn btn-light btn-sm mt-2" href="/about">How It Works</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,266 @@
+:root {
+	--bg-soft: #eef4ff;
+	--bg-warm: #f6f9ef;
+	--ink: #1d2638;
+	--ink-muted: #5a6781;
+	--line: rgba(30, 49, 93, 0.16);
+	--panel: rgba(255, 255, 255, 0.86);
+	--brand-a: #0c7a8c;
+	--brand-b: #2a56db;
+	--brand-c: #0f1729;
+	--accent: #e8f1ff;
+	--ok: #0f9c67;
+	--danger: #c33653;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	color: var(--ink);
+	font-family: 'Manrope', 'Segoe UI', sans-serif;
+	background:
+		radial-gradient(circle at 10% 5%, rgba(30, 128, 255, 0.13), transparent 34%),
+		radial-gradient(circle at 90% 12%, rgba(33, 182, 127, 0.16), transparent 30%),
+		linear-gradient(135deg, var(--bg-soft), var(--bg-warm));
+	min-height: 100vh;
+}
+
+.page-bg {
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: -1;
+	background-image: linear-gradient(rgba(32, 66, 121, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(32, 66, 121, 0.04) 1px, transparent 1px);
+	background-size: 28px 28px;
+	mask-image: radial-gradient(circle at center, black 48%, transparent 100%);
+}
+
+.app-shell {
+	max-width: 1100px;
+}
+
+.app-navbar {
+	position: sticky;
+	top: 0;
+	z-index: 99;
+	backdrop-filter: blur(8px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.navbar-brand {
+	font-family: 'Sora', sans-serif;
+	letter-spacing: 0.03em;
+	font-weight: 700;
+}
+
+.bg-primary {
+	background: linear-gradient(120deg, var(--brand-a), var(--brand-b), var(--brand-c)) !important;
+}
+
+.nav-link {
+	color: rgba(255, 255, 255, 0.9) !important;
+	margin-left: 0.35rem;
+	border-radius: 999px;
+	padding: 0.45rem 0.85rem !important;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+	background: rgba(255, 255, 255, 0.16);
+	transform: translateY(-1px);
+}
+
+.card {
+	border-radius: 18px;
+	border: 1px solid var(--line);
+	background: var(--panel);
+	backdrop-filter: blur(8px);
+	box-shadow: 0 20px 60px -34px rgba(16, 44, 100, 0.55);
+}
+
+.hero-card {
+	overflow: hidden;
+	position: relative;
+}
+
+.hero-card::after {
+	content: '';
+	position: absolute;
+	width: 230px;
+	height: 230px;
+	right: -65px;
+	bottom: -110px;
+	border-radius: 50%;
+	background: radial-gradient(circle at center, rgba(42, 86, 219, 0.2), transparent 70%);
+}
+
+.display-title {
+	font-family: 'Sora', sans-serif;
+	font-size: clamp(1.9rem, 1.5rem + 1.4vw, 2.7rem);
+	line-height: 1.15;
+	color: #17213a;
+}
+
+.section-kicker {
+	text-transform: uppercase;
+	letter-spacing: 0.13em;
+	color: #516078;
+	font-size: 0.78rem;
+	font-weight: 800;
+}
+
+.lead-copy {
+	color: var(--ink-muted);
+	max-width: 58ch;
+}
+
+.info-panel {
+	background: linear-gradient(140deg, #112145, #19406f);
+	color: #f3f7ff;
+	border: none;
+}
+
+.feature-list {
+	padding-left: 1rem;
+	margin-bottom: 0;
+}
+
+.feature-list li {
+	margin-bottom: 0.65rem;
+}
+
+.form-shell,
+.result-shell {
+	animation: rise 560ms ease both;
+}
+
+.form-label {
+	color: #2f3b54;
+	font-weight: 700;
+	font-size: 0.88rem;
+}
+
+.form-control,
+.form-select {
+	border-radius: 12px;
+	border: 1px solid #ccd7eb;
+	background: #fdfefe;
+	padding: 0.68rem 0.86rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+	border-color: #66a4ff;
+	box-shadow: 0 0 0 0.2rem rgba(42, 86, 219, 0.2);
+}
+
+.btn {
+	border-radius: 11px;
+	font-weight: 700;
+	letter-spacing: 0.01em;
+	padding: 0.58rem 1.05rem;
+}
+
+.btn-primary {
+	background: linear-gradient(110deg, #0f9cad, #2a56db);
+	border: none;
+}
+
+.btn-primary:hover {
+	filter: brightness(1.04);
+}
+
+.btn-outline-secondary {
+	border-color: #7d8dad;
+	color: #2b3a5c;
+}
+
+.btn-light {
+	border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.result-stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.result-stats p {
+	margin: 0;
+	padding: 0.6rem 0.85rem;
+	background: var(--accent);
+	border-radius: 10px;
+}
+
+.table {
+	border-radius: 12px;
+	overflow: hidden;
+	border: 1px solid var(--line);
+}
+
+.table thead {
+	background: #ecf3ff;
+}
+
+.app-alert {
+	border: none;
+	border-radius: 12px;
+	box-shadow: 0 12px 30px -20px rgba(17, 34, 74, 0.9);
+}
+
+.app-footer {
+	color: #586683;
+}
+
+.reveal {
+	animation: fadeSlide 620ms ease both;
+}
+
+@keyframes fadeSlide {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes rise {
+	from {
+		opacity: 0;
+		transform: translateY(8px) scale(0.985);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@media (max-width: 992px) {
+	.nav-link {
+		margin-left: 0;
+		margin-bottom: 0.3rem;
+	}
+
+	.app-navbar .navbar-collapse {
+		margin-top: 0.7rem;
+		padding-top: 0.65rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.25);
+	}
+}
+
+@media (max-width: 768px) {
+	main.container {
+		margin-top: 1.9rem !important;
+		margin-bottom: 1.7rem !important;
+	}
+
+	.card {
+		border-radius: 14px;
+	}
+}
